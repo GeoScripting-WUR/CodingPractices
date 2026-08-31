@@ -436,16 +436,29 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
 </div>
 <ul>
 <li>A <code>main</code> script at the root of the project. This script performs step by step the different operations of your project. It is the only non-generic part of your project (it contains executable code outside functions, including paths, already set variables, etc.). The file extension of this file will depend on what language you are using for your project. We typically call these files <code>main.r</code> and <code>main.py</code>, but it could also be e.g.&nbsp;<code>task1.r</code>.</li>
-<li>As we will be working with multiple languages throughout this course, we will keep things organized by placing scripts in a directory per language.
+<li>As we will be working with multiple languages throughout this course, we will keep things organized by placing scripts in a directory per language.</li>
+</ul>
+<section id="r-bash" class="level4">
+<h4 class="anchored" data-anchor-id="r-bash">R &amp; Bash</h4>
 <ul>
 <li>For R and Bash we will use the directories <code>R/</code> and <code>Bash/</code>. These directories should contain functions you have defined as part of your project.</li>
-<li>In python functions are stored in a directory with a name relevant to the project. For example when working on flood mapping, you would put functions in a directory called <code>floodmapping</code>. For smaller projects (&lt; 5) functions, all functions can go in 1 script. For bigger projects functions are stored in multiple files, split by functionality. More on python project organization see the <a href="https://docs.python-guide.org/writing/structure/#structure-of-code-is-key">Hitchhiker’s guide to Python</a>.</li>
-<li>Functions should be as generic as possible and are imported and called by the <code>main</code> script. In R you would write <code>source(R/myFunction.R)</code>, in python you would write <code>from floodmapping import *</code></li>
-</ul></li>
-<li>A <code>data/</code> subdirectory: This directory contains data sets of the project. Since Git is not as efficient with non-text files, and GitLab has storage limits, you should only put small data sets in that directory (&lt;2-3 MB). Typically, you do not include it in your git repository at all; rather, this directory is created from your <code>main</code> script, and is used to store data downloaded from the internet. It can be safely removed after the script is finished running.</li>
-<li>An <code>output/</code> subdirectory (when applicable), where you place the final result of running your script. This should also not be tracked by git: your scripts create the output, so there is no need to store it.</li>
-<li>A <code>README.md</code> file should be included, this file should contain a description of your project, along with a description of what other packages your script needs to function correctly, and any other instructions needed to correctly run your code.</li>
-<li>Finally, you should include a <code>LICENSE.txt</code> file with the software licence which you would like your code to have.</li>
+<li>In R, to import the functions into the main script: write <code>source(R/myFunction.R)</code></li>
+</ul>
+</section>
+<section id="python-1" class="level4">
+<h4 class="anchored" data-anchor-id="python-1">Python</h4>
+<ul>
+<li><p>For Python we will follow coding conventions</p></li>
+<li><p>In python functions are stored in a directory with a name relevant to the project.</p></li>
+<li><p>For example when working on flood mapping, you would put functions in a directory called <code>floodmapping</code>.</p></li>
+<li><p>For smaller projects (&lt; 5) functions, all functions can go in 1 script. For bigger projects functions are stored in multiple files, split by functionality.</p></li>
+<li><p>More on python project organization see the <a href="https://docs.python-guide.org/writing/structure/#structure-of-code-is-key">Hitchhiker’s guide to Python</a>.</p></li>
+<li><p>in python we use scoping to keep things organized. To import functions into the main script write <code>import floodmapping as fm</code>. Call a function using the scope: <code>fm.myfunction</code> The scoping allows self written functions to be distinguishable from other functions.</p></li>
+<li><p>Functions should be as generic as possible and are imported and called by the <code>main</code> script.</p></li>
+<li><p>A <code>data/</code> subdirectory: This directory contains data sets of the project. Since Git is not as efficient with non-text files, and GitLab has storage limits, you should only put small data sets in that directory (&lt;2-3 MB). Typically, you do not include it in your git repository at all; rather, this directory is created from your <code>main</code> script, and is used to store data downloaded from the internet. It can be safely removed after the script is finished running.</p></li>
+<li><p>An <code>output/</code> subdirectory (when applicable), where you place the final result of running your script. This should also not be tracked by git: your scripts create the output, so there is no need to store it.</p></li>
+<li><p>A <code>README.md</code> file should be included, this file should contain a description of your project, along with a description of what other packages your script needs to function correctly, and any other instructions needed to correctly run your code.</p></li>
+<li><p>Finally, you should include a <code>LICENSE.txt</code> file with the software licence which you would like your code to have.</p></li>
 </ul>
 <div class="cell" type="alert alert-danger">
 <div class="alert alert-danger">
@@ -457,6 +470,7 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
 </p>
 </div>
 </div>
+</section>
 <section id="example-main-file" class="level3">
 <h3 class="anchored" data-anchor-id="example-main-file">Example <code>main</code> file</h3>
 <p>Typically the header of your main script will look like the following:</p>
@@ -681,7 +695,7 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/GeoScripting-WUR\.github\.io\/CodingPractices\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
