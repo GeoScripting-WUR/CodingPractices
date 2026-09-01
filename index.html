@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dainius Masiliūnas, Arno Timmer">
-<meta name="dcterms.date" content="2026-08-31">
+<meta name="dcterms.date" content="2026-09-01">
 
-<title>AI and best coding practices – Python Environments</title>
+<title>AI and best coding practices</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 31, 2026</p>
+      <p class="date">September 1, 2026</p>
     </div>
   </div>
   
@@ -435,25 +435,25 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
 </figure>
 </div>
 <ul>
-<li>A <code>main</code> script at the root of the project. This script performs step by step the different operations of your project. It is the only non-generic part of your project (it contains executable code outside functions, including paths, already set variables, etc.). The file extension of this file will depend on what language you are using for your project. We typically call these files <code>main.r</code> and <code>main.py</code>, but it could also be e.g.&nbsp;<code>task1.r</code>.</li>
-<li>As we will be working with multiple languages throughout this course, we will keep things organized by placing scripts in a directory per language.</li>
-</ul>
-<section id="r-bash" class="level4">
-<h4 class="anchored" data-anchor-id="r-bash">R &amp; Bash</h4>
+<li><p>A <code>main</code> script at the root of the project. This script performs step by step the different operations of your project. It is the only non-generic part of your project (it contains executable code outside functions, including paths, already set variables, etc.). The file extension of this file will depend on what language you are using for your project. We typically call these files <code>main.r</code> and <code>main.py</code>, but it could also be e.g.&nbsp;<code>task1.r</code>.</p></li>
+<li><p>As we will be working with multiple languages throughout this course, we will keep things organized by placing scripts in a directory per language.</p>
+<ul>
+<li><strong>R &amp; Bash</strong>
 <ul>
 <li>For R and Bash we will use the directories <code>R/</code> and <code>Bash/</code>. These directories should contain functions you have defined as part of your project.</li>
 <li>In R, to import the functions into the main script: write <code>source(R/myFunction.R)</code></li>
-</ul>
-</section>
-<section id="python-1" class="level4">
-<h4 class="anchored" data-anchor-id="python-1">Python</h4>
+</ul></li>
+<li><strong>Python </strong>
 <ul>
-<li><p>For Python we will follow coding conventions</p></li>
-<li><p>In python functions are stored in a directory with a name relevant to the project.</p></li>
-<li><p>For example when working on flood mapping, you would put functions in a directory called <code>floodmapping</code>.</p></li>
-<li><p>For smaller projects (&lt; 5) functions, all functions can go in 1 script. For bigger projects functions are stored in multiple files, split by functionality.</p></li>
-<li><p>More on python project organization see the <a href="https://docs.python-guide.org/writing/structure/#structure-of-code-is-key">Hitchhiker’s guide to Python</a>.</p></li>
-<li><p>in python we use scoping to keep things organized. To import functions into the main script write <code>import floodmapping as fm</code>. Call a function using the scope: <code>fm.myfunction</code> The scoping allows self written functions to be distinguishable from other functions.</p></li>
+<li>For Python we will follow coding conventions, for more detailed information see the <a href="https://docs.python-guide.org/writing/structure/#structure-of-code-is-key">Hitchhiker’s guide to Python</a>.</li>
+<li>In python functions are stored in a directory with a name relevant to the project, in a file with a relevant filename. For example:
+<ul>
+<li>A small (&lt; 10 functions) flood mapping exercise, you would put functions in a file called <code>functions.py</code> in a directory called <code>floodmapping</code>.</li>
+<li>For a bigger traffic dashboard project with separate download, analysis and publishing steps, functions and classes could go in a directory called <code>trafficdashboard</code> in files called <code>download.py</code>, <code>analysis.py</code> and <code>publishing.py</code>.</li>
+</ul></li>
+<li>Use scoping to keep things organized. To import functions into the main script write <code>from floodmapping import functions as funcs</code>. Call a function using the scope: <code>funcs.myfunction</code> The scoping allows self written functions to be distinguishable from other functions.</li>
+</ul></li>
+</ul></li>
 <li><p>Functions should be as generic as possible and are imported and called by the <code>main</code> script.</p></li>
 <li><p>A <code>data/</code> subdirectory: This directory contains data sets of the project. Since Git is not as efficient with non-text files, and GitLab has storage limits, you should only put small data sets in that directory (&lt;2-3 MB). Typically, you do not include it in your git repository at all; rather, this directory is created from your <code>main</code> script, and is used to store data downloaded from the internet. It can be safely removed after the script is finished running.</p></li>
 <li><p>An <code>output/</code> subdirectory (when applicable), where you place the final result of running your script. This should also not be tracked by git: your scripts create the output, so there is no need to store it.</p></li>
@@ -470,7 +470,6 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
 </p>
 </div>
 </div>
-</section>
 <section id="example-main-file" class="level3">
 <h3 class="anchored" data-anchor-id="example-main-file">Example <code>main</code> file</h3>
 <p>Typically the header of your main script will look like the following:</p>
