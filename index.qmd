@@ -414,27 +414,21 @@ The file extension of this file will depend on what language you are using for y
 We typically call these files `main.r` and `main.py`, but it could also be e.g. `task1.r`.
 * As we will be working with multiple languages throughout this course, we will keep things organized by placing scripts in a directory per language.
 
-#### R & Bash
-  * For R and Bash we will use the directories `R/` and `Bash/`.
-These directories should contain functions you have defined as part of your project.
-  * In R, to import the functions into the main script: write `source(R/myFunction.R)`
+  * __R & Bash__
+    * For R and Bash we will use the directories `R/` and `Bash/`.
+  These directories should contain functions you have defined as part of your project.
+    * In R, to import the functions into the main script: write `source(R/myFunction.R)`
 
-#### Python 
-  * For Python we will follow coding conventions 
-  * In python functions are stored in a directory with a name relevant to the project.
-  * For example when working on flood mapping, you would put functions in a directory called `floodmapping`.
-  * For smaller projects (< 5) functions, all functions can go in 1 script. For bigger projects functions are stored in multiple files, split by functionality.
-  * More on python project organization see the [Hitchhiker's guide to Python](https://docs.python-guide.org/writing/structure/#structure-of-code-is-key).
-  * in python we use scoping to keep things organized. To import functions into the main script write `import floodmapping as fm`. Call a function using the scope: `fm.myfunction` The scoping allows self written functions to be distinguishable from other functions. 
-  
-  
+  * __Python __
+    * For Python we will follow coding conventions, for more detailed information see the [Hitchhiker's guide to Python](https://docs.python-guide.org/writing/structure/#structure-of-code-is-key).
+    * In python functions are stored in a directory with a name relevant to the project, in a file with a relevant filename. For example: 
+      * A small (< 10 functions) flood mapping exercise, you would put functions in a file called `functions.py` in a directory called `floodmapping`. 
+      * For a bigger traffic dashboard project with separate download, analysis and publishing steps, functions and classes could go in a directory called `trafficdashboard` in files called `download.py`, `analysis.py` and `publishing.py`. 
+    * Use scoping to keep things organized. To import functions into the main script write `from floodmapping import functions as funcs`. Call a function using the scope: `funcs.myfunction` The scoping allows self written functions to be distinguishable from other functions. 
+ 
 * Functions should be as generic as possible and are imported and called by the `main` script.
-* A `data/` subdirectory: This directory contains data sets of the project.
-Since Git is not as efficient with non-text files, and GitLab has storage limits, you should only put small data sets in that directory (<2-3 MB).
-Typically, you do not include it in your git repository at all; rather, this directory is created from your `main` script, and is used to store data downloaded from the internet.
-It can be safely removed after the script is finished running.
-* An `output/` subdirectory (when applicable), where you place the final result of running your script.
-This should also not be tracked by git: your scripts create the output, so there is no need to store it.
+* A `data/` subdirectory: This directory contains data sets of the project.  Since Git is not as efficient with non-text files, and GitLab has storage limits, you should only put small data sets in that directory (<2-3 MB). Typically, you do not include it in your git repository at all; rather, this directory is created from your `main` script, and is used to store data downloaded from the internet. It can be safely removed after the script is finished running.
+* An `output/` subdirectory (when applicable), where you place the final result of running your script. This should also not be tracked by git: your scripts create the output, so there is no need to store it.
 * A `README.md` file should be included, this file should contain a description of your project, along with a description of what other packages your script needs to function correctly, and any other instructions needed to correctly run your code. 
 * Finally, you should include a `LICENSE.txt` file with the software licence which you would like your code to have.
 
