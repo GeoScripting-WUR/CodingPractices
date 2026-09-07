@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dainius Masiliūnas, Arno Timmer">
-<meta name="dcterms.date" content="2026-09-01">
+<meta name="dcterms.date" content="2026-09-07">
 
 <title>AI and best coding practices</title>
 <style>
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f1a5c2bb43452cd3d80060817c0f5863.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3fd26f1720109480f9692f3993e9ff04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bdb1f3eb971eca97e385bc6bee2653ab.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2026</p>
+      <p class="date">September 7, 2026</p>
     </div>
   </div>
   
@@ -304,9 +304,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>It’s time for us to actually delve into R and Python programming! But how do we do that efficiently? We could write scripts in Notepad and run them, but that is not particularly efficient, as there are many graphical user interfaces (GUIs) that can help us write code faster. Comprehensive GUIs that help with writing, debugging and packaging code are called integrated development environments (IDEs).</p>
 <section id="r" class="level2">
 <h2 class="anchored" data-anchor-id="r">R</h2>
-<p>There are multiple IDEs for R. The most popular IDE for R is <em>RStudio</em>. It is developed by posit, a company that is very active in contributing to R (Hadley Wickham and others). Posit recently released a new IDE called positron. Positron is the follow up of Rstudio and is specifically designed with (bigger) data analysis (data science) in mind. It is designed not only for R but also for Python and other languages. Positron is a based upon VScode, it is a clone that was further developed by the folks from Posit. Although posit does not say it definitively and they will keep maintaining RStudio, new features will be <a href="https://positron.posit.co/faqs.html">primarily implemented</a> in Positron. Both RStudio and positron are cross-platform and open-source.</p>
-<p>Even the products from posit are very popular, they are not the only IDE’s for R. <em>RKWard</em> is an alternative IDE, aimed at easier learning of R for people coming from other statistical software, such as <em>SPSS</em>. It includes menus for common statistical analysis algorithms, such as getting descriptive statistics, running statistical tests, and making plots. It also includes an editor for data tables. <em>RKWard</em> is an open-source native desktop app that is developed on Linux, but has also been ported to other platforms, including Windows.</p>
-<p>Furthermore, similar to positron, there are more cross-language GUIs/IDEs, such as <em>Jupyter</em>, whose name is a portmanteau of <strong>Ju</strong>lia, <strong>Pyt</strong>hon and <strong>R</strong>. <em>Jupyter</em> can run different language interpreters, what it calls kernels, for each script that is open, therefore scripts in multiple languages can be edited at the same time in the same interface.</p>
+<p>There are multiple IDEs for R. The most popular IDEs for R are developed by Posit, a company that is very active in contributing to R (Hadley Wickham and others). The first IDE Posit developed is called <em>RStudio</em>, and it continues to be very popular. Its successor is <em>Positron</em>, which is specifically designed with (bigger) data analysis and data science in mind. It is designed not only for R, but also for Python, Bash and other languages. Positron is based upon Visual Studio Code, a popular multi-language IDE developed by Microsoft. Although Posit will keep maintaining RStudio, new features will be <a href="https://positron.posit.co/faqs.html">primarily implemented</a> in Positron. Both RStudio and Positron are cross-platform and open-source.</p>
+<p>Even though the Posit IDEs are very popular, they are not the only IDEs for R. <em>RKWard</em> is an alternative IDE, aimed at easier learning of R for people coming from other statistical software, such as <em>SPSS</em>. It includes menus for common statistical analysis algorithms, such as getting descriptive statistics, running statistical tests, and making plots. It also includes an editor for data tables. <em>RKWard</em> is an open-source native desktop app that is developed on Linux, but has also been ported to other platforms, including Windows.</p>
+<p>Furthermore, there are more cross-language GUIs/IDEs like Positron, such as <em>Jupyter</em>, whose name is a portmanteau of <strong>Ju</strong>lia, <strong>Pyt</strong>hon and <strong>R</strong>. <em>Jupyter</em> can run different language interpreters, what it calls kernels, for each script that is opened. Therefore, scripts in multiple languages can be edited at the same time in the same interface.</p>
 <p>One thing to keep in mind is that there is a distinction between a programming language, such as R, and its IDEs, such as <em>Positron</em>. Which IDE you use is up to your own personal preference. Which IDE you used to develop code does not matter, because in the end you just have an R script that can be run on any of the IDEs, or directly from the command line. What does matter is that the script is written in the R language, as the users will need to have the R interpreter installed in order to run the script. Likewise, the packages that you use in your script are also important, as the users will need to install them before they can run your script. Therefore, whenever you refer to scripts and packages, for instance when writing a thesis, you need to specify what language the scripts are written in, and what packages (and ideally what versions) you used. You should not mention which IDE you used, as that is irrelevant to the readers. For example, you should not write “the scripts are written in RStudio”, but rather, you should write “the scripts are written in R, using package <code>lattice</code> version 0.22”. In fact, you should also cite the authors of the language and the packages you used. R includes a handy function <code>citation()</code> to help you cite:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -362,21 +362,20 @@ A BibTeX entry for LaTeX users is
 <div class="cell" type="alert alert-info">
 <div class="alert alert-info">
 <p>
-As a sidenote, IDEs can change how certain commands in R work. For instance, there are two commands in R that load packages: <code>library()</code> and <code>require()</code>. Most IDEs make no difference between the two; <code>require()</code> just gives a warning if it can’t load a package, whereas <code>library()</code> stops with an error. However, in <em>RKWard</em>, running <code>require()</code> on a package that does not exist will result in its package management dialogue opening with the required packages preselected for installation, and closing the dialogue will result in a successful loading of the package (if it was installed successfully). Therefore, do not use <code>require(“package”)</code> to check if <code>package</code> is installed, otherwise it will be installed twice under RKward. Instead, you can use <code>“package” %in% installed.packages()</code>.
+As a sidenote, IDEs can change how certain commands in R work. For instance, there are two commands in R that load packages: <code>library()</code> and <code>require()</code>. Most IDEs make no difference between the two; <code>require()</code> just gives a warning if it can’t load a package, whereas <code>library()</code> stops with an error. However, in <em>RKWard</em>, running <code>require()</code> on a package that does not exist will result in its package management dialogue opening with the required packages preselected for installation, and closing the dialogue will result in a successful loading of the package (if it was installed successfully). Therefore, do not use <code>require(“package”)</code> to check if <code>package</code> is installed, otherwise it will be installed twice under RKWard. Instead, you can use <code>“package” %in% installed.packages()</code>.
 </p>
 </div>
 </div>
 <p>Next, let’s look a bit more in detail at the IDEs described above and their configuration options.</p>
 <section id="positron" class="level3">
 <h3 class="anchored" data-anchor-id="positron">Positron</h3>
-<p>In the virtual machines provided in the course, Positron is already installed for you. As said, Positron is designed to write code in both R and Python. It is maintained and designed by Posit, the company behind the famous Rstudio. It is built upon a version of VScode (a clone of VScode) and therefor might feel familiar to those who used VScode before. Positron is also available for windows or Mac.</p>
-<p>See <a href="https://posit.co/blog/a-quick-tour-of-positron">this introduction</a> by positron to get familiar with the lay out and functionality.</p>
+<p>In the virtual machines provided in the course, Positron is already installed for you. Positron is also available for Windows or Mac. We already used in in the previous tutorials to interact with Git and Bash, and it will be our go-to IDE throughout the course, in both R and Python.</p>
+<p>See <a href="https://posit.co/blog/a-quick-tour-of-positron">this introduction</a> by Posit to get familiar with the layout and functionality.</p>
 </section>
 <section id="rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
-<p>Rstudio is also installed on the virtual machine. Since it is so well known, you might be familiar with Rstudio already. In case you are working on your own computer and would like to know how to install <em>R</em> and <em>RStudio</em>, see the <a href="https://www.rstudio.com/products/rstudio/download/">RStudio website</a>.</p>
-<p>If you are new to <em>RStudio</em> take a look at the following summary YouTube video about how to use RStudio: <a href="https://www.youtube.com/watch?v=FIrsOBy5k58">Intro to RStudio (6 min)</a>. In it you will learn how to navigate the RStudio environment and even run some code.</p>
-<p>Additionally, the first time you open <em>RStudio</em> it’s helpful to change some global settings. To do this go to <em>Tools</em> → <em>Global Options…</em> in the top menu bar of <em>RStudio</em>. The following box should appear. Set the settings to match that of the screenshot, namely, <em>Never save the workspace to .RData file on exit</em> and uncheck the boxes under <em>History</em> and <em>Restore .RData</em>. The effect is that RStudio will stop prompting you on exit about whether you want to save the workspace and reload it on next start, which will save you time answering prompts and save time opening RStudio. Most importantly, it will make sure that restarting RStudio leaves you with a clean environment, equal to what another user of your code would start with, so you can properly test your code, and restart RStudio in case something goes wrong to get back to a clean state.</p>
+<p>RStudio is also installed on the virtual machine. Since it is so well known, you might be familiar with RStudio already.</p>
+<p>If you are using RStudio, the first time you open it, it’s helpful to change some global settings. To do this go to <em>Tools</em> → <em>Global Options…</em> in the top menu bar of <em>RStudio</em>. The following box should appear. Set the settings to match that of the screenshot, namely, <em>Never save the workspace to .RData file on exit</em> and uncheck the boxes under <em>History</em> and <em>Restore .RData</em>. The effect is that RStudio will stop prompting you on exit about whether you want to save the workspace and reload it on next start, which will save you time answering prompts and save time opening RStudio. Most importantly, it will make sure that restarting RStudio leaves you with a clean environment, equal to what another user of your code would start with, so you can properly test your code, and restart RStudio in case something goes wrong to get back to a clean state.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://github.com/GeoScripting-WUR/Scripting4GeoIntro/blob/gh-pages/figs/global_options.png?raw=true" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Global Options"><img src="https://github.com/GeoScripting-WUR/Scripting4GeoIntro/blob/gh-pages/figs/global_options.png?raw=true" class="img-fluid figure-img" alt="Global Options"></a></p>
@@ -694,7 +693,7 @@ As a sidenote, IDEs can change how certain commands in R work. For instance, the
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/GeoScripting-WUR\.github\.io\/CodingPractices\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
