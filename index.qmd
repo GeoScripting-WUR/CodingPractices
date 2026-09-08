@@ -8,7 +8,7 @@ format:
     theme: simplex
     highlight-style: zenburn
     toc: true
-    toc-location: left
+    toc-location: right
     css: styles.css
     lightbox: true
 ---
