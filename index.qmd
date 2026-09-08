@@ -4,7 +4,7 @@ author: "Dainius Masiliūnas, Arno Timmer"
 date: today
 format:
   html:
-    title: "R & Python basics"
+    title: "AI and best coding practices"
     theme: simplex
     highlight-style: zenburn
     toc: true
