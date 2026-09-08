@@ -235,24 +235,25 @@ Comprehensive GUIs that help with writing, debugging and packaging code are call
 
 ## R
 
-There are multiple IDEs for R. The most popular IDE for R is *RStudio*.
-It is developed by posit, a company that is very active in contributing to R (Hadley Wickham and others). 
-Posit recently released a new IDE called positron. 
-Positron is the follow up of Rstudio and is specifically designed with (bigger) data analysis (data science) in mind.
-It is designed not only for R but also for Python and other languages. 
-Positron is a based upon VScode, it is a clone that was further developed by the folks from Posit. 
-Although posit does not say it definitively and they will keep maintaining RStudio, new features will be [primarily implemented](https://positron.posit.co/faqs.html) in Positron.
-Both RStudio and positron are cross-platform and open-source. 
+There are multiple IDEs for R.
+The most popular IDEs for R are developed by Posit, a company that is very active in contributing to R (Hadley Wickham and others). 
+The first IDE Posit developed is called *RStudio*, and it continues to be very popular.
+Its successor is *Positron*, which is specifically designed with (bigger) data analysis and data science in mind.
+It is designed not only for R, but also for Python, Bash and other languages. 
+Positron is based upon Visual Studio Code, a popular multi-language IDE developed by Microsoft.
+Although Posit will keep maintaining RStudio, new features will be [primarily implemented](https://positron.posit.co/faqs.html) in Positron.
+Both RStudio and Positron are cross-platform and open-source. 
 
 
-Even the products from posit are very popular, they are not the only IDE's for R.
+Even though the Posit IDEs are very popular, they are not the only IDEs for R.
 *RKWard* is an alternative IDE, aimed at easier learning of R for people coming from other statistical software, such as *SPSS*.
 It includes menus for common statistical analysis algorithms, such as getting descriptive statistics, running statistical tests, and making plots.
 It also includes an editor for data tables.
 *RKWard* is an open-source native desktop app that is developed on Linux, but has also been ported to other platforms, including Windows.
 
-Furthermore, similar to positron, there are more cross-language GUIs/IDEs, such as *Jupyter*, whose name is a portmanteau of **Ju**lia, **Pyt**hon and **R**.
-*Jupyter* can run different language interpreters, what it calls kernels, for each script that is open, therefore scripts in multiple languages can be edited at the same time in the same interface.
+Furthermore, there are more cross-language GUIs/IDEs like Positron, such as *Jupyter*, whose name is a portmanteau of **Ju**lia, **Pyt**hon and **R**.
+*Jupyter* can run different language interpreters, what it calls kernels, for each script that is opened.
+Therefore, scripts in multiple languages can be edited at the same time in the same interface.
 
 One thing to keep in mind is that there is a distinction between a programming language, such as R, and its IDEs, such as *Positron*.
 Which IDE you use is up to your own personal preference.
@@ -283,31 +284,26 @@ As a sidenote, IDEs can change how certain commands in R work.
 For instance, there are two commands in R that load packages: `library()` and `require()`.
 Most IDEs make no difference between the two; `require()` just gives a warning if it can't load a package, whereas `library()` stops with an error.
 However, in *RKWard*, running `require()` on a package that does not exist will result in its package management dialogue opening with the required packages preselected for installation, and closing the dialogue will result in a successful loading of the package (if it was installed successfully).
-Therefore, do not use `require("package")` to check if `package` is installed, otherwise it will be installed twice under RKward.
+Therefore, do not use `require("package")` to check if `package` is installed, otherwise it will be installed twice under RKWard.
 Instead, you can use `"package" %in% installed.packages()`.
 ```
 
 Next, let's look a bit more in detail at the IDEs described above and their configuration options.
 
 ### Positron
-In the virtual machines provided in the course, Positron is already installed for you. 
-As said, Positron is designed to write code in both R and Python. 
-It is maintained and designed by Posit, the company behind the famous Rstudio. 
-It is built upon a version of VScode (a clone of VScode) and therefor might feel familiar to those who used VScode before. 
-Positron is also available for windows or Mac. 
 
-See [this introduction](https://posit.co/blog/a-quick-tour-of-positron) by positron to get familiar with the lay out and functionality. 
+In the virtual machines provided in the course, Positron is already installed for you.
+Positron is also available for Windows or Mac.
+We already used in in the previous tutorials to interact with Git and Bash, and it will be our go-to IDE throughout the course, in both R and Python.
+
+See [this introduction](https://posit.co/blog/a-quick-tour-of-positron) by Posit to get familiar with the layout and functionality. 
 
 ### RStudio
 
-Rstudio is also installed on the virtual machine. 
-Since it is so well known, you might be familiar with Rstudio already. 
-In case you are working on your own computer and would like to know how to install *R* and *RStudio*, see the [RStudio website](https://www.rstudio.com/products/rstudio/download/).
+RStudio is also installed on the virtual machine. 
+Since it is so well known, you might be familiar with RStudio already. 
 
-If you are new to *RStudio* take a look at the following summary YouTube video about how to use RStudio: [Intro to RStudio (6 min)](https://www.youtube.com/watch?v=FIrsOBy5k58).
-In it you will learn how to navigate the RStudio environment and even run some code.
-
-Additionally, the first time you open *RStudio* it's helpful to change some global settings.
+If you are using RStudio, the first time you open it, it's helpful to change some global settings.
 To do this go to *Tools* → *Global Options...* in the top menu bar of *RStudio*.
 The following box should appear.
 Set the settings to match that of the screenshot, namely, *Never save the workspace to .RData file on exit* and uncheck the boxes under *History* and *Restore .RData*.
